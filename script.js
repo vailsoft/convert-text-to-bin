@@ -3,11 +3,17 @@
 function codificar() {
     texto = document.getElementById('texto').value
     binValues = []
+    hexValues = []
     textBin = ""
+    textHex = ""
     for (i = 0; i < texto.length; i++) {
         binValue = texto.charCodeAt(i).toString(2)
+        hexValue = texto.charCodeAt(i).toString(16)
         if (binValue.length = 7) {
             binValues.push(("00000000" + binValue).slice(-8))
+        }
+        if (hexValue.length = 1) {
+            hexValues.push(("00" + hexValue).slice(-2))
         }
     }
     for (i = 0; i < binValues.length; i++) {
@@ -17,8 +23,20 @@ function codificar() {
             textBin += " " + binValues[i]
         }
     }
+
+    for (i = 0; i < hexValues.length; i++) {
+        if (i == 0) {
+            textHex += hexValues[i]
+        } else {
+            textHex += " " + hexValues[i]
+        }
+    }
+
+
     textarea = document.getElementById('resultado')
     textarea.value = textBin
+    textarea2 = document.getElementById('hex')
+    textarea2.value = textHex
 }
 
 function somenteNumeros(e) {
