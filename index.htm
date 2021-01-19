@@ -10,12 +10,14 @@
 
 <body>
     <div id="container">
-        <h2>Conversor de texto para Binário</h2>
+        <h2>Texto</h2>
         <textarea name="texto" id="texto" cols="50" rows="10" oninput="codificar()"></textarea>
+        <h2>Binário</h2>
         <textarea name="resultado" id="resultado" cols="50" rows="10" oninput="decodificar()"
-            onkeypress="return somenteNumeros(event)"></textarea>
-            <textarea name="hex" id="hex" cols="50" rows="10" oninput="decodificar()"
-            onkeypress="return somenteNumeros(event)"></textarea>
+        onkeypress="return somenteNumeros(event)"></textarea>
+        <h2>Hexadecimal</h2>
+        <textarea name="hex" id="hex" cols="50" rows="10" oninput="decodificar()"
+        onkeypress="return somenteNumeros(event)"></textarea>
     </div>
     <script src="script.js"></script>
 </body>
